@@ -1,15 +1,16 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Form from "./form/Form.js";
+// import Form from "./form/Form.js";
 import SearchResultContainer from "./components/SearchResultContainer";
 
 function App() {
   return (
 
     <div className="App">
-      <Form />
       <SearchResultContainer />
-      <header className="App-header">
+    </div>
+      {/* <Form /> */ }
+  {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -22,8 +23,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
+  </header>*/}
   );
 }
 
