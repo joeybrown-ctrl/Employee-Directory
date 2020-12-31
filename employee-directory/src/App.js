@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Form from "./form/Form.js";
+import SearchResultContainer from "./components/SearchResultContainer";
 
 function App() {
   return (
 
     <div className="App">
       <Form />
+      <SearchResultContainer />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
