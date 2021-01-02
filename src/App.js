@@ -1,16 +1,30 @@
-// import logo from './logo.svg';
+import Table from "react-bootstrap/table";
+import API from "./utils/API.js";
 import './App.css';
-// import Form from "./form/Form.js";
-import SearchResultContainer from "./components/SearchResultContainer";
+import { render } from "@testing-library/react";
 
-function App() {
-  return (
+class APP extends Component {
+  state = {
+    search: "",
+    results: []
+  };
 
-    <div className="App">
-      <SearchResultContainer />
-    </div>
+  componentDidMount() {
+    API.getEmployees()
+    .then((res) => {
+      console.log(res.data);
+      this.setState({ results: res.data.results });
+    })
+    .catch((err) => console.log(err));
 
-  );
+    render() {
+      return (
+        <div>
+          
+        </div>
+      )
+    }
+  }
 }
 
 export default App;
