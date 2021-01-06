@@ -56,35 +56,26 @@ export default function App() {
 
       <Wrapper className="container-fluid">
         <div className="nav-row">
-          <Navbar />
+          <DirNav />
         </div>
-        <div className="filter-row">
-          <div className="filter-col">
             <form>
               <label>
                 Filter by Name:
               <input
                   type="text"
-                  className="searchBar"
                   value={search}
                   onChange={(event) => {
-
-                    setSearch(event.target.value);
+                  setSearch(event.target.value);
                   }}
                 />
               </label>
             </form>
-          </div>
-        </div>
 
-        <div className="table-row">
-          <div className="table-col">
             <EmployeeTable sort={sort} setSort={setSort} className="table">
               {search.length < 1
                 ? results.map((result, i) => (
                   <EmpItem
-                    style={{ color: "white" }}
-                    className="table-item"
+                    
                     number={i}
                     key={result.login.uuid}
                     name={result.name.first + " " + result.name.last}
@@ -93,15 +84,15 @@ export default function App() {
                     picture={result.picture.medium}
                   ></EmpItem>
                 ))
+
+
                 results.map((result, i) => {
-                  if (
-                    result.name.first
+                  if (result.name.first
                       .toLowerCase()
-                      .includes(search.toLowerCase())
-                  ) {
-                    return (
+                      .includes(search.toLowerCase())) 
+                      { 
+                        return (
                       <EmpItem
-                className="table-item"
                 number={i}
                 key={result.login.uuid}
                 name={result.name.first + " " + result.name.last}
@@ -110,11 +101,11 @@ export default function App() {
                 picture={result.picture.medium}
               ></EmpItem>
                     );
-                  }
-                })}
+                  }})
+                }
+
+
           </EmployeeTable>
-          </div>
-        </div>
       </Wrapper>
     </div>
   );
