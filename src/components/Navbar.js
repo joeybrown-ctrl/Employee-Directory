@@ -1,12 +1,16 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 
-function Navbar() {
+function DirNav() {
     return (
-        <nav className="navbar">
-            Employee Directory
-        </nav>
+
+            <Navbar>
+                <Navbar.Brand>Employee Directory</Navbar.Brand>
+                <Navbar.Toggle />
+                <Navbar.Collapse className="justify-content-end">
+                </Navbar.Collapse>
+            </Navbar>
     );
 }
 
-export default Navbar;
+export default DirNav;

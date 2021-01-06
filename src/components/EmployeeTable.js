@@ -1,7 +1,7 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 
-function Table(props) {
+function EmployeeTable(props) {
     return (
         <table className="table">
             <thead>
@@ -40,4 +40,4 @@ function Table(props) {
     );
 }
 
-export default Table;
+export default EmployeeTable;
