@@ -20,14 +20,14 @@ export default function App() {
 
   useEffect(() => {
     if (sort) {
-      ascendingSort("first", results);
+      ascSort("first", results);
     } else {
-      descendingSort("first", results);
+      dscSort("first", results);
     }
     console.log(sort);
   }, [sort]);
 
-  const ascendingSort = (prop, arr) => {
+  const ascSort = (prop, arr) => {
     arr.sort((a, b) => {
       if (a.name[prop] < b.name[prop]) {
         return -1;
@@ -39,7 +39,7 @@ export default function App() {
     });
   };
 
-  const descendingSort = (prop, arr) => {
+  const dscSort = (prop, arr) => {
     arr.sort((a, b) => {
       if (a.name[prop] < b.name[prop]) {
         return 1;
@@ -55,9 +55,8 @@ export default function App() {
     <div className="App">
 
       <Wrapper className="container-fluid">
-        <div className="nav-row">
           <DirNav />
-        </div>
+
             <form>
               <label>
                 Filter by Name:
@@ -71,11 +70,11 @@ export default function App() {
               </label>
             </form>
 
-            <EmployeeTable sort={sort} setSort={setSort} className="table">
+            <EmployeeTable sort={sort} setSort={setSort}>
               {search.length < 1
                 ? results.map((result, i) => (
+
                   <EmpItem
-                    
                     number={i}
                     key={result.login.uuid}
                     name={result.name.first + " " + result.name.last}
