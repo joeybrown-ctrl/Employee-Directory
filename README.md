@@ -4,6 +4,8 @@
 
 **version 1.0.0**
 
+[For deployed version, click me](https://budget-tracker-joeybrown-ctrl.herokuapp.com/)
+
 <br>
 
   ## Table of Contents
@@ -22,7 +24,7 @@
 
   ## Description 
 
-
+![image of employee directory]()
 
   <hr>
 
