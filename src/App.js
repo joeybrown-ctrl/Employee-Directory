@@ -4,7 +4,7 @@ import DirNav from "./components/Navbar";
 import EmployeeTable from "./components/EmployeeTable";
 import EmpItem from "./components/EmpItem";
 import API from "./utils/API";
-import "./App.css";
+// import "./App.css";
 
 export default function App() {
 
@@ -13,7 +13,7 @@ export default function App() {
   const [sort, setSort] = useState(true);
 
   useEffect(() => {
-    API.fetchEmployees()
+    API.getEmployees()
       .then((res) => setResults(res.data.results))
       .catch((err) => console.log(err));
   }, []);
@@ -55,56 +55,59 @@ export default function App() {
     <div className="App">
 
       <Wrapper className="container-fluid">
-          <DirNav />
+        <DirNav />
 
-            <form>
-              <label>
-                Filter by Name:
+        <form>
+          <label>
+            Filter by Name:
               <input
-                  type="text"
-                  value={search}
-                  onChange={(event) => {
-                  setSearch(event.target.value);
-                  }}
-                />
-              </label>
-            </form>
+              type="text"
+              value={search}
+              onChange={(event) => {
+                setSearch(event.target.value);
+              }}
+            />
+          </label>
+        </form>
 
-            <EmployeeTable sort={sort} setSort={setSort}>
-              {search.length < 1
-                ? results.map((result, i) => (
+        <EmployeeTable sort={sort} setSort={setSort}>
+          {search.length < 1
+            ? results.map((result, i) => (
 
-                  <EmpItem
-                    number={i}
-                    key={result.login.uuid}
-                    name={result.name.first + " " + result.name.last}
-                    phone={result.phone}
-                    email={result.email}
-                    picture={result.picture.medium}
-                  ></EmpItem>
-                ))
-
-
-                results.map((result, i) => {
-                  if (result.name.first
-                      .toLowerCase()
-                      .includes(search.toLowerCase())) 
-                      { 
-                        return (
-                      <EmpItem
+              <EmpItem
                 number={i}
                 key={result.login.uuid}
                 name={result.name.first + " " + result.name.last}
                 phone={result.phone}
                 email={result.email}
                 picture={result.picture.medium}
-              ></EmpItem>
-                    );
-                  }})
-                }
+              >
+
+              </EmpItem>
+            ))
 
 
-          </EmployeeTable>
+            : results.map((result, i) => {
+              if (result.name.first
+                .toLowerCase()
+                .includes(search.toLowerCase())) {
+                return (
+                  <EmpItem
+                    number={i}
+                    key={result.login.uuid}
+                    name={result.name.first + " " + result.name.last}
+                    phone={result.phone}
+                    email={result.email}
+                    picture={result.picture.medium}>
+
+                  </EmpItem>
+                );
+              }
+            })
+          }
+
+
+        </EmployeeTable>
       </Wrapper>
     </div>
   );

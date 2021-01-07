@@ -1,15 +1,15 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
+
 
 function EmployeeTable(props) {
     return (
-        <table className="table">
+        <table>
             <thead>
                 <tr>
                     <th scope="col">
                         <span>
                             Name
-            <svg
+                            <svg
                                 className=""
                                 onClick={() => {
                                     props.setSort(!props.sort);
@@ -20,8 +20,8 @@ function EmployeeTable(props) {
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
+                                >
+                            <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     strokeWidth={2}
