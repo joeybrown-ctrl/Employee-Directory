@@ -1,9 +1,10 @@
 import React from "react";
+import Table from "react-bootstrap/Table";
 
 
 function EmployeeTable(props) {
     return (
-        <table>
+        <Table striped bordered hover>
             <thead>
                 <tr>
                     <th scope="col">
@@ -36,7 +37,7 @@ function EmployeeTable(props) {
                 </tr>
             </thead>
             <tbody>{props.children}</tbody>
-        </table>
+        </Table>
     );
 }
 

@@ -6,9 +6,6 @@ function DirNav() {
 
             <Navbar>
                 <Navbar.Brand>Employee Directory</Navbar.Brand>
-                <Navbar.Toggle />
-                <Navbar.Collapse className="justify-content-end">
-                </Navbar.Collapse>
             </Navbar>
     );
 }

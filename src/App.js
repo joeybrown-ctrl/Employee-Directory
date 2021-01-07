@@ -65,28 +65,23 @@ export default function App() {
               value={search}
               onChange={(event) => {
                 setSearch(event.target.value);
-              }}
-            />
+              }} />
           </label>
         </form>
 
         <EmployeeTable sort={sort} setSort={setSort}>
+
           {search.length < 1
             ? results.map((result, i) => (
-
               <EmpItem
                 number={i}
                 key={result.login.uuid}
                 name={result.name.first + " " + result.name.last}
                 phone={result.phone}
                 email={result.email}
-                picture={result.picture.medium}
-              >
+                picture={result.picture.medium}>
 
-              </EmpItem>
-            ))
-
-
+              </EmpItem> ))
             : results.map((result, i) => {
               if (result.name.first
                 .toLowerCase()
@@ -105,8 +100,6 @@ export default function App() {
               }
             })
           }
-
-
         </EmployeeTable>
       </Wrapper>
     </div>
