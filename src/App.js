@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Wrapper from "./components/Wrapper";
-import DirNav from "./components/Navbar";
+import Jumbotron from "react-bootstrap/Jumbotron";
 import EmployeeTable from "./components/EmployeeTable";
 import EmpItem from "./components/EmpItem";
 import API from "./utils/API";
@@ -52,22 +52,25 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <>
 
-      <Wrapper className="container-fluid">
-        <DirNav />
-
-        <form>
-          <label>
-            Filter by Name:
-              <input
-              type="text"
-              value={search}
-              onChange={(event) => {
-                setSearch(event.target.value);
-              }} />
-          </label>
-        </form>
+      <Wrapper>
+        <Jumbotron className="text-center">
+          <h1>Employee Directory</h1>
+          <hr />
+          <form className="text-center">
+            <label>
+              Filter by Name:
+                    <input
+                type="text"
+                value={search}
+                onChange={(event) => {
+                  setSearch(event.target.value);
+                }} />
+            </label>
+          </form>
+          
+        </Jumbotron>
 
         <EmployeeTable sort={sort} setSort={setSort}>
 
@@ -81,7 +84,7 @@ export default function App() {
                 email={result.email}
                 picture={result.picture.medium}>
 
-              </EmpItem> ))
+              </EmpItem>))
             : results.map((result, i) => {
               if (result.name.first
                 .toLowerCase()
@@ -102,6 +105,6 @@ export default function App() {
           }
         </EmployeeTable>
       </Wrapper>
-    </div>
+    </>
   );
 }
