@@ -24,7 +24,9 @@
 
   ## Description 
 
-![image of employee directory]()
+  An employee directory app built with React that allows the user to filter through employees by name. 
+
+![image of employee directory](https://raw.githubusercontent.com/joeybrown-ctrl/Employee-Directory/main/public/assets/EmpDir.png)
 
   <hr>
 
