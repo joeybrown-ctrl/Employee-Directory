@@ -4,7 +4,7 @@
 
 **version 1.0.0**
 
-[For deployed version, click me](https://budget-tracker-joeybrown-ctrl.herokuapp.com/)
+[For deployed version, click me](https://joeybrown-ctrl.github.io/Employee-Directory/)
 
 <br>
 
